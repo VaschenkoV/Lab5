@@ -1,0 +1,213 @@
+body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+    background-color: #f4f4f4;  
+}  
+
+header {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 15px 0;  
+}  
+
+.container {  
+    width: 90%;  
+    max-width: 1000px;  
+    margin: 0 auto;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+}  
+
+nav ul {  
+    list-style: none;  
+    padding: 0;  
+}  
+
+nav ul li {  
+    display: inline;  
+    margin-right: 15px;  
+}  
+
+nav ul li a {  
+    color: white;  
+    text-decoration: none;  
+}  
+
+.catalog {  
+    padding: 20px;  
+    max-width: 800px;  
+    margin: auto;  
+    background: white;  
+    border-radius: 8px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}  
+
+.filters {  
+    display: flex;  
+    justify-content: space-between;  
+    margin-bottom: 20px;  
+}  
+
+.filter {  
+    flex: 1;  
+    margin-right: 10px;  
+}  
+
+.products {  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: space-between;  
+}  
+
+.product {  
+    flex: 1 0 18%; /* ширина для п'яти товарів в ряд */  
+    border: 1px solid #ddd;  
+    border-radius: 5px;  
+    padding: 10px;  
+    margin: 10px;  
+    text-align: center;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+}  
+
+.product img {  
+    width: auto;  
+    height: 150px; /* встановлено для однакового вигляду */  
+}  
+
+button {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 10px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+button:hover {  
+    background-color: #45a049;  
+}  
+
+footer {  
+    background-color: #333;  
+    color: white;  
+    text-align: center;  
+    padding: 10px 0;  
+}
+
+.contact-form-section {  
+    margin-top: 30px;  
+    padding: 20px;  
+    background: #f9f9f9;  
+    border: 1px solid #ccc;  
+    border-radius: 8px;  
+}  
+
+.contact-form-section h2 {  
+    margin: 0 0 15px 0;  
+}  
+
+.contact-form-section label {  
+    display: block;  
+    margin-bottom: 5px;  
+}  
+
+.contact-form-section input[type="text"],  
+.contact-form-section input[type="email"],  
+.contact-form-section textarea {  
+    width: 100%;  
+    padding: 10px;  
+    margin-bottom: 15px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+}  
+
+.contact-form-section button {  
+    background-color: #4CAF50;  
+    color: white;  
+    padding: 10px 15px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+.contact-form-section button:hover {  
+    background-color: #45a049;  
+}  
+
+.form-response {  
+    margin-top: 15px;  
+    color: green;  
+}
+
+.product-selection {  
+    margin-bottom: 20px; /* Відстань між вибором товару та іншими полями */  
+}  
+
+.product-item {  
+    margin: 10px 0; /* Відстань між товарами */  
+}  
+
+.product-item label {  
+    margin-left: 10px; /* Відстань між іконкою та текстом */  
+}
+
+footer {  
+    background-color: #1c1c1c; /* Чорний фон */  
+    color: #ffffff;            /* Білий текст */  
+    padding: 40px 20px;       /* Внутрішній відступ */  
+    text-align: left;          /* Вирівнювання по лівому краю */  
+}  
+
+footer h2 {  
+    font-size: 24px;           /* Розмір заголовка */  
+    margin-bottom: 20px;       /* Відстань від заголовка до тексту */  
+    font-weight: bold;         /* Жирний шрифт */  
+}  
+
+.contact-info {  
+    margin-bottom: 20px;       /* Відстань під контактною інформацією */  
+}  
+
+.contact-item {  
+    margin: 10px 0;           /* Відстань між контактами */  
+    display: flex;             /* Випрямлення елементів */  
+    align-items: center;       /* Вертикальне вирівнювання */  
+}  
+
+.contact-item i {  
+    margin-right: 10px;        /* Відстань між іконкою та текстом */  
+}  
+
+.links {  
+    display: flex;             /* Випрямлення елементів */  
+    flex-direction: column;    /* Вертикальне вирівнювання */  
+}  
+
+.links a {  
+    color: #ffffff;            /* Білий текст */  
+    text-decoration: none;      /* Без підкреслення */  
+    margin: 5px 0;            /* Відстань між посиланнями */  
+    display: flex;             /* Випрямлення елементів */  
+    align-items: center;       /* Вертикальне вирівнювання */  
+}  
+
+.links a i {  
+    margin-right: 10px;        /* Відстань між іконкою та текстом */  
+}  
+
+.links a:hover {  
+    text-decoration: underline; /* Підкреслення при наведенні */  
+}
+
+.product-selection {  
+    margin-bottom: 20px; /* Відстань між вибором товару та іншими полями */  
+}  
+
+.product-selection select {  
+    width: 100%; /* Ширина 100% */  
+    padding: 10px; /* Внутрішній відступ */  
+    border: 1px solid #ccc; /* Кордони */  
+    border-radius: 4px; /* Закруглені кути */  
+}

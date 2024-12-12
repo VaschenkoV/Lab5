@@ -1,0 +1,168 @@
+<!DOCTYPE html>  
+<html lang="uk">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Обмін Файлами - Каталог</title>  
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>  
+<body>  
+    <header>  
+        <div class="container">  
+            <h1>Обмін Файлами</h1>  
+            <nav>  
+                <ul>  
+                    <li><a href="#">Головна</a></li>  
+                    <li><a href="#">Каталог</a></li>  
+                    <li><a href="#">Контакти</a></li>  
+                </ul>  
+            </nav>  
+        </div>  
+    </header>  
+
+    <main>  
+        <div class="catalog">  
+            <h2>Каталог товарів</h2>  
+            <div class="filters">  
+                <div class="filter">  
+                    <span>Ціна, грн</span>  
+                    <input type="range" min="0" max="1000" value="500" class="price-range" id="priceRange" oninput="filterProducts()">  
+                    <span id="priceValue">500</span>  
+                </div>  
+                <div class="filter">  
+                    <span>Сортувати за:</span>  
+                    <select id="sortSelect" onchange="sortProducts()">  
+                        <option value="popularity">За популярністю</option>  
+                        <option value="low">Дешеві</option>  
+                        <option value="high">Дорогі</option>  
+                    </select>  
+                </div>  
+            </div>  
+
+            <div class="products" id="productList">  
+                <div class="product" data-price="857">  
+                    <img src="https://via.placeholder.com/150" alt="ESET Internet Security 2">  
+                    <h3>ESET Internet Security 2</h3>  
+                    <p>857 грн</p>  
+                    <button onclick="addToCart('ESET Internet Security 2', 857)">В кошик</button>  
+                </div>  
+                <div class="product" data-price="812">  
+                    <img src="https://via.placeholder.com/150" alt="Kaspersky Internet">  
+                    <h3>Kaspersky Internet</h3>  
+                    <p>812 грн</p>  
+                    <button onclick="addToCart('Kaspersky Internet', 812)">В кошик</button>  
+                </div>  
+                <div class="product" data-price="900">  
+                    <img src="https://via.placeholder.com/150" alt="Dr. Web Security">  
+                    <h3>Dr. Web Security</h3>  
+                    <p>900 грн</p>  
+                    <button onclick="addToCart('Dr. Web Security', 900)">В кошик</button>  
+                </div>  
+                <div class="product" data-price="845">  
+                    <img src="https://via.placeholder.com/150" alt="Bitdefender Antivirus">  
+                    <h3>Bitdefender Antivirus</h3>  
+                    <p>845 грн</p>  
+                    <button onclick="addToCart('Bitdefender Antivirus', 845)">В кошик</button>  
+                </div>  
+                <div class="product" data-price="780">  
+                    <img src="https://via.placeholder.com/150" alt="Norton Security">  
+                    <h3>Norton Security</h3>  
+                    <p>780 грн</p>  
+                    <button onclick="addToCart('Norton Security', 780)">В кошик</button>  
+                </div>  
+            </div>  
+        </div>  
+    </main>
+     <!-- Окрема секція для форми зворотного зв'язку -->  
+        <section class="contact-form-section">  
+            <h2>Форма зворотного зв'язку</h2>  
+            <form id="feedbackForm">  
+                <label for="name">Ім'я:</label>  
+                <input type="text" id="name" name="name" required>  
+                
+                <label for="email">Email:</label>  
+                <input type="email" id="email" name="email" required>  
+                
+                <label for="message">Повідомлення:</label>  
+                <textarea id="message" name="message" required></textarea>  
+                
+                <button type="submit">Надіслати</button>  
+            </form>  
+            <div id="formResponse" class="form-response"></div>  
+        </section> 
+  
+  <!-- Payment Section -->  
+<section class="payment-section">  
+    <h2>Оплата</h2>  
+    <div class="product-selection">  
+        <h3>Виберіть товар:</h3>  
+        <select id="product-select" onchange="updateProductDetails()">  
+            <option value="" data-price="0">Оберіть товар</option>  
+            <option value="Norton Security" data-price="780">Norton Security (780 грн)</option>  
+            <option value="ESET Internet Security" data-price="857">ESET Internet Security (857 грн)</option>  
+            <option value="Kaspersky Internet" data-price="812">Kaspersky Internet (812 грн)</option>  
+            <option value="Dr. Web Security" data-price="900">Dr. Web Security (900 грн)</option>  
+            <option value="Bitdefender Antivirus" data-price="845">Bitdefender Antivirus (845 грн)</option>  
+        </select>  
+    </div>  
+
+    <div class="payment-info">  
+        <div class="customer-info">  
+            <label for="fullname">ПІБ:</label>  
+            <input type="text" id="fullname" placeholder="Введіть ваше ім'я" required>  
+
+            <label for="phone">Номер тф:</label>  
+            <input type="tel" id="phone" placeholder="Введіть номер телефону" required>  
+
+            <label for="address">Адреса:</label>  
+            <input type="text" id="address" placeholder="Введіть вашу адресу" required>  
+
+            <label for="payment-method">Форма оплати:</label>  
+            <select id="payment-method">  
+                <option value="card">Картка</option>  
+                <option value="cash">Готівка</option>  
+                <option value="paypal">PayPal</option>  
+            </select>  
+        </div>  
+
+        <div class="product-details">  
+            <h3>К-сть товару:</h3>  
+            <input type="number" min="1" value="1" id="product-quantity" required>  
+
+            <h3>Назва товару</h3>  
+            <p id="product-name">Оберіть товар</p>  
+
+            <h3>Ціна</h3>  
+            <p id="product-price">0 грн</p>  
+        </div>  
+    </div>  
+
+    <button class="payment-button" onclick="submitPayment()">Оплата</button>  
+</section>
+
+    <!-- Footer Section -->  
+<footer>  
+    <div class="container">  
+        <h2>КОНТАКТИ</h2>  
+        <div class="contact-info">  
+            <div class="contact-item">  
+                <i class="fas fa-paper-plane"></i> Vaschenko / @vladislav_vaschenko
+            </div>  
+            <div class="contact-item">  
+                <i class="fas fa-envelope"></i> vaschenkovlad@gmail.com  
+            </div>  
+            <div class="contact-item">  
+                <i class="fas fa-instagram"></i> Профіль  
+            </div>  
+        </div>  
+        <div class="links">  
+            <a href="https://t.me/your_channel" target="_blank"><i class="fas fa-paper-plane"></i> Telegram-канал</a>  
+            <a href="https://www.youtube.com" target="_blank"><i class="fas fa-video"></i> YouTube</a>  
+            <a href="https://www.example.com" target="_blank"><i class="fas fa-globe"></i> Запасной сайт</a>  
+        </div>  
+    </div>  
+</footer>  
+      <script src="script.js"></script>  
+</body>  
+</html>
